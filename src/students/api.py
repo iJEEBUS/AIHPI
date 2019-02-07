@@ -18,24 +18,24 @@ from .serializers import StudentSerializer, TrophySerializer, TopicSerializer, P
 # Trophy Viewset
 class TrophyViewSet(viewsets.ModelViewSet):
   queryset = trophy.objects.all()
-  permissions_classes = [permissions.AllowAny]
+  permissions_classes = [permissions.AllowAny] # TODO modify permissions
   serializer_class = TrophySerializer 
 
 # Student Viewset
 class StudentViewSet(viewsets.ModelViewSet):
   queryset = student.objects.all()
-  permissions_classes = [permissions.AllowAny]
+  permissions_classes = [permissions.AllowAny] # TODO modify permissions
   serializer_class = StudentSerializer
 
 # Topic Serializer
 class TopicViewSet(viewsets.ModelViewSet):
   queryset = topic.objects.all()
-  permissions_classes = [permissions.AllowAny]
+  permissions_classes = [permissions.AllowAny] # TODO modify permissions
   serializer_class = TopicSerializer 
 
 # Problem Serializer
 class ProblemViewSet(viewsets.ModelViewSet):
   queryset = problem.objects.all()
-  permissions_classes = [permissions.AllowAny]
+  permissions_classes = [permissions.AllowAny] # TODO modify permissions
   serializer_class = ProblemSerializer
 

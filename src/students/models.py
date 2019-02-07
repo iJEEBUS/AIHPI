@@ -14,9 +14,13 @@ Current models include:
 from django.db import models
 
 
+
+# TODO must still modify the field of the attributes. The ones in place 
+# are currently there as placeholders.
+
 class student(models.Model):
   user_name = models.CharField(max_length=100)
-  password = models.CharField(max_length=100)
+  password = models.CharField(max_length=100) # TODO must make this a secure password
   access_key = models.CharField(max_length=100, unique=True)
   created_at = models.DateTimeField(auto_now_add=True) # to keep track of account age
 

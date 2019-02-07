@@ -1,3 +1,4 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+# TODO create views so you can project the data onto the page
