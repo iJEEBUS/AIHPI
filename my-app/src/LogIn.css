@@ -1,0 +1,23 @@
+.LogIn_container{
+    margin-top: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-style: solid;
+    border-width: 5px;
+    width: 50%;
+    height: 50%;
+}
+
+.LogIn_text{
+    border-style: solid;
+    border-width: 3px;
+}
+
+.LogIn_conferm{
+    margin-top: 5px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: black;
+    background-color: white;
+    font-weight: bold;
+}
