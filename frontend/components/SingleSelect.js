@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './SingleSelect.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class SingleSelect extends Component {
     constructor(props) {
@@ -31,9 +32,10 @@ handleOptionSelect(e, content, task){
       <div className="SingleSelectBox">
       {this.props.title}<br/>
       {this.state.options.map(i => (
-            <div className={i.selected? " complete inline":" inline"} onClick={()=>this.handleOptionSelect(i.key,i.content,this.props.task) }>
-            {i.content}
-            </div>
+            <table className="inline" onClick={()=>this.handleOptionSelect(i.key,i.content,this.props.task) }>
+              {i.icon ==null?null:<tr><td><FontAwesomeIcon className={i.selected? "complete":""} icon={i.icon} size={"2x"} /></td></tr> }
+              <tr><td className={i.selected? "complete":""}>{i.content}</td></tr> 
+            </table>
             
     ))}
       </div>

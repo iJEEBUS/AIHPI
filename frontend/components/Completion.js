@@ -1,5 +1,6 @@
 import React from 'react';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faStar, faStarHalf  } from '@fortawesome/free-regular-svg-icons'
 import './Completion.css';
 
 const Completion = (props) => {

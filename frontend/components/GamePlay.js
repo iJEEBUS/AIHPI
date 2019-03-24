@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import Timer from './Timer'
 import Progress from './Progress'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimesCircle, faClock } from '@fortawesome/free-regular-svg-icons'
+import './GamePlay.css'
 
 class GamePlay extends Component {
     constructor(props) {
@@ -49,8 +51,8 @@ class GamePlay extends Component {
       const rounds = this.props.rouds;
     return (
       <div className={ this.state.isShowing ? "back-drop":""}>
+        <FontAwesomeIcon icon={faTimesCircle} className="right" size={"2x"} onClick={quit}/>
         <h2>GamePlay</h2>
-        {this.props.year}{this.props.difficultly}{rounds}<br/>
         <Progress questions={questions}/>
         <div className="Game_data">
             {questions[current].data}

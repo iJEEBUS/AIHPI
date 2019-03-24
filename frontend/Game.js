@@ -10,7 +10,7 @@ class Game extends Component {
     this.state = {
       lifeCycle: "settings",
       year: "1",
-      difficultly: "e",
+      difficultly: "easy",
       questionsNumber: 1
     };
   }
@@ -41,6 +41,7 @@ class Game extends Component {
     return filteredQuestions;
   }
   handleStartGamePlay= event =>{
+    
    const newQuestions = this.retrieveDataFromTable();
     this.setState(
       {lifeCycle: "GamePlay",
@@ -68,7 +69,7 @@ closeModalHandler = () => {
   render() {
     if(this.state.lifeCycle == "settings"){
     return (
-      <div className="Game_container">       
+      <div className="Game_container">
             <GameSettings 
               onChange={this.handleStartGamePlay}
               setYear={this.handleYearSet}

@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import SingleSelect from './SingleSelect';
+import './GameSettings.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMeh, faGrinBeam, faGrinStars, faArrowAltCircleRight } from '@fortawesome/free-regular-svg-icons'
 
 class GameSettings extends Component {
   getYearOptions = (year) =>{
-    const yearOptions = [{key:1,content:"1",selected:false},{key:2,content:"2",selected:false},{key:3,content:"3",selected:false}]
+    const yearOptions = [{key:1,content:"1",icon:null,selected:false},{key:2,content:"2",icon:null,selected:false},{key:3,content:"3",icon:null,selected:false}]
     const setYearOptions = yearOptions.filter(function(option){
       if(option.content == year){
         option.selected =true;
@@ -13,7 +16,7 @@ class GameSettings extends Component {
     return setYearOptions;
   }
   getDifficultyOptions = (difficulty) =>{
-    const difficultyOptions = [{key:1,content:"e",selected:false},{key:2,content:"m",selected:false},{key:3,content:"h",selected:false}]
+    const difficultyOptions = [{key:1,content:"easy",icon:faMeh,selected:false},{key:2,content:"medium",icon:faGrinBeam,selected:false},{key:3,content:"hard",icon:faGrinStars,selected:false}]
     const setDifficultyOptions = difficultyOptions.filter(function(option){
       if(option.content == difficulty){
         option.selected =true;
@@ -23,7 +26,7 @@ class GameSettings extends Component {
     return setDifficultyOptions;
   }
   getAmountOptions = (amount) =>{
-    const amountOptions = [{key:1,content:"1",selected:false},{key:2,content:"3",selected:false},{key:3,content:"5",selected:false}]
+    const amountOptions = [{key:1,content:"1",icon:null,selected:false},{key:2,content:"3",icon:null,selected:false},{key:3,content:"5",icon:null,selected:false}]
     const setamountOptions = amountOptions.filter(function(option){
       if(option.content == amount){
         option.selected =true;
@@ -46,7 +49,7 @@ class GameSettings extends Component {
         <SingleSelect title={"Questions"} options={questionNumberOptions} task={this.props.setAmount}/>
         </div>
         <br/>
-        <button className="Game_conferm" onClick={onChange}>Go</button>
+        <FontAwesomeIcon icon={faArrowAltCircleRight} size={"3x"} onClick={onChange}/>
       </div>
     );
   }

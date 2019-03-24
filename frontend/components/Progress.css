@@ -1,10 +1,5 @@
-.inline {
+FontAwesomeIcon {
     display: inline;
-    border-style: solid;
-    border-width: 3px;
-    background-color: grey;
-    margin-right: 5px;
-    padding-left: 5px
   }
   .ProgressBox{
     border-style: solid;
@@ -12,9 +7,6 @@
     width: 50%;
     padding-top: 5px;
     padding-bottom: 5px;
-  }
-  .complete{
-    background-color: green;
   }
   .progressStatus{
     border-style: solid;
