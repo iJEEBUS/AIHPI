@@ -39,6 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'trophies',
     'problems',
+    'users',
+    'topics',
+    'keys',
+    'key_users',
+    'user_trophies',
+    'topic_trophies',
     'rest_framework',
     'corsheaders'
 ]
