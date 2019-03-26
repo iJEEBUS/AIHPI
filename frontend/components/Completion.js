@@ -19,6 +19,10 @@ const Completion = (props) => {
                     <p>
                         {props.children}
                     </p>
+                    <FontAwesomeIcon icon={faStar} size={"2x"} />
+                    <FontAwesomeIcon icon={faStar} size={"2x"} />
+                    <FontAwesomeIcon icon={faStar} size={"2x"} />
+                    <FontAwesomeIcon icon={faStarHalf} size={"2x"} />
                 </div>
                 <div className="modal-footer">
                     <button className="btn-continue" onClick={props.close}>CONTINUE</button>

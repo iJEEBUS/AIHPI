@@ -67,8 +67,9 @@
 
 .back-drop {
     background-color: rgba(48, 49, 48, 0.42);
-    width: 50%;
-    height: 50%;
+    border-radius: 25px;
+    width: 70%;
+    height: 53%;
     position: fixed;
     transition: all 1.3s;
 }

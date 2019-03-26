@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Progress.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCheckSquare, faSquare  } from '@fortawesome/fontawesome-free-regular'
+import { faCheckSquare, faSquare } from '@fortawesome/fontawesome-free-regular'
 
 class Progress extends Component {
     constructor(props) {
@@ -16,7 +16,7 @@ class Progress extends Component {
     return (
       <div className="ProgressBox">
       {this.state.questions.map(i => (         
-              <FontAwesomeIcon icon={i.answered?faCheckSquare:faSquare} size={"2x"} />       
+              <span><FontAwesomeIcon icon={i.answered?faCheckSquare:faSquare} size={"2x"} /><span>  </span></span>      
     ))}
       </div>
     );

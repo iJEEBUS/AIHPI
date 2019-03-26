@@ -30,7 +30,7 @@ handleOptionSelect(e, content, task){
   render() {
     return (
       <div className="SingleSelectBox">
-      {this.props.title}<br/>
+      <b>{this.props.title}</b><br/>
       {this.state.options.map(i => (
             <table className="inline" onClick={()=>this.handleOptionSelect(i.key,i.content,this.props.task) }>
               {i.icon ==null?null:<tr><td><FontAwesomeIcon className={i.selected? "complete":""} icon={i.icon} size={"2x"} /></td></tr> }
