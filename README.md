@@ -19,7 +19,7 @@ Setup the backend requirements
 
 Sync the database
 
-> python3 manage.py makemigration
+> python3 manage.py makemigrations
 
 > python3 manage.py migrate
 
