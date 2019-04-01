@@ -30,7 +30,9 @@ Note: above you can specify a port to run on, defaults to 3000
 
 Setup the front end
 
-> cd frontend
+> cd frontend/gui
+
+> npm install
 
 > npm start OR yarn start (depends on package manager being used)
 
