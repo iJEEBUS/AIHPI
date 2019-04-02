@@ -1,17 +1,17 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 The DB model for the trophy application
 
-@author Ron Rounsifer
+@author Ron Rounsifer & Daniel Schroeder
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 from django.db import models
 
 class Trophy(models.Model):
     
     # trophy information
-    title = models.CharField(max_length=120)
+    title = models.CharField(max_length=120,primary_key=True)
     description = models.CharField(max_length=120)
-    topic = models.CharField(max_length=100)
     content = models.CharField(max_length=500)
+    
 
     def __str__(self):
         return self.title

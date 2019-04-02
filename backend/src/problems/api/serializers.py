@@ -6,4 +6,4 @@ from problems.models import Problem
 class ProblemSerializer(serializers.ModelSerializer):
     class Meta:
         model = Problem
-        fields = ('id', 'title', 'description', 'topic','solution')
+        fields = ('id', 'title', 'description','solution')
