@@ -33,9 +33,9 @@ class Game extends Component {
     const queriedQuestions = [
       { key:0, data: this.patientData1(), question:"where?", answered: false, answer:"", type:"tf", time: 10 },
       { key:1, data: this.patientData2(), question:"when?", answered: false, answer:"", type:"blank", time: 14 },
-      { key:2, data: "data3 ", question:"why?", answered: false, answer:"", type:"short", time: 11 },
-      { key:3, data: "data4", question:"who?", answered: false, answer:"", type:"multi", time: 20  },
-      { key:4, data: "data5", question:"wo?", answered: false, answer:"", type:"tf", time: 20  }
+      { key:2, data: this.patientData3(), question:"why?", answered: false, answer:"", type:"short", time: 11 },
+      { key:3, data: this.patientData4(), question:"who?", answered: false, answer:"", type:"multi", time: 20  },
+      { key:4, data: this.patientData5(), question:"wo?", answered: false, answer:"", type:"tf", time: 20  }
     ];
     const filteredQuestions = queriedQuestions.filter(question => question.key <this.state.questionsNumber);
     return filteredQuestions;
