@@ -18,13 +18,15 @@ class GamePlay extends Component {
           finish: this.props.openModal
         };
     }
-    answerQuestion=()=>{
+    answerQuestion=(answer)=>{
+      alert(answer)
       const key = this.state.current;
       const current = this.state.current+1;
-      if(current<this.state.questions.length){
+      
         const changedItem = this.state.questions.find(function(value) {
           if (value.key === key) {
             value.answered = true;
+            value.answer = answer;
             return value;
           }
         });
@@ -36,13 +38,14 @@ class GamePlay extends Component {
             return value;
           }
         });
+      if(current<this.state.questions.length){
         this.setState({
           showQuestion:!this.state.showQuestion,
           current: current,
           questions: newQuestions
         })
       }else{
-        this.state.finish()
+        this.state.finish(newQuestions)
       }
     }
   render() {
@@ -62,7 +65,12 @@ class GamePlay extends Component {
         {showQuestion?
         <div>
         <div className="Game_question">
-          <AnswerType question= {questions[current].question} type ={questions[current].type}/>
+          <AnswerType 
+            question= {questions[current].question} 
+            type ={questions[current].type} 
+            wordbank={questions[current].wordbank} 
+            answer={this.answerQuestion}
+          />
             <Timer seconds={questions[current].time}/>
         </div>
         <button className="Game_conferm" onClick={()=>this.answerQuestion()}>Answer</button>
