@@ -10,6 +10,15 @@ class Completion extends Component {
         };
     }
     render() {
+        var meh =0;
+        const worth = 1/ this.props.rounds
+        this.props.data.filter(function(value) {
+            if (value.correct == value.answer) {
+                meh=meh+worth
+            }
+          });
+        const score = (meh.toFixed(3)) *100;
+
     return (
         <div>
             <div className="modal-wrapper"
@@ -23,7 +32,8 @@ class Completion extends Component {
                 </div>
                 <div className="modal-body">
                     <p>
-                        {this.props.children}
+                    You have completed the game with a score of: {score}%!
+                    Great Job!
                     </p>
                     <FontAwesomeIcon icon={faStar} size={"2x"} />
                     <FontAwesomeIcon icon={faStar} size={"2x"} />
