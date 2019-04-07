@@ -18,7 +18,15 @@ class Completion extends Component {
             }
           });
         const score = (meh.toFixed(3)) *100;
-
+        var starScore =20;
+        var stars = []
+        while(starScore < score){
+           stars.push(faStar)
+           starScore =starScore+ 20; 
+        }
+        if(starScore -10 <= score){
+            stars.push(faStarHalf)
+        }
     return (
         <div>
             <div className="modal-wrapper"
@@ -35,10 +43,10 @@ class Completion extends Component {
                     You have completed the game with a score of: {score}%!
                     Great Job!
                     </p>
-                    <FontAwesomeIcon icon={faStar} size={"2x"} />
-                    <FontAwesomeIcon icon={faStar} size={"2x"} />
-                    <FontAwesomeIcon icon={faStar} size={"2x"} />
-                    <FontAwesomeIcon icon={faStarHalf} size={"2x"} />
+                    {stars.map(i => (         
+                        <FontAwesomeIcon icon={i} size={"2x"} />      
+                    ))}
+
                 </div>
                 <div className="modal-footer">
                     <button className="btn-continue" onClick={this.props.close}>CONTINUE</button>
