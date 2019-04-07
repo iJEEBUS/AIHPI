@@ -19,7 +19,6 @@ class GamePlay extends Component {
         };
     }
     answerQuestion=(answer)=>{
-      alert(answer)
       const key = this.state.current;
       const current = this.state.current+1;
       
