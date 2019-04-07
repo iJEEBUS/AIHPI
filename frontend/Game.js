@@ -11,7 +11,8 @@ class Game extends Component {
       lifeCycle: "settings",
       year: "1",
       difficultly: "easy",
-      questionsNumber: 1
+      questionsNumber: 1,
+      data:[]
     };
   }
   handleYearSet= value =>{
@@ -31,11 +32,11 @@ class Game extends Component {
   }
   retrieveDataFromTable=()=>{
     const queriedQuestions = [
-      { key:0, data: this.patientData1(), question:"where?", answered: false, answer:"", type:"tf", time: 10 },
-      { key:1, data: this.patientData2(), question:"when?", answered: false, answer:"", type:"blank", time: 14 },
-      { key:2, data: this.patientData3(), question:"why?", answered: false, answer:"", type:"short", time: 11 },
-      { key:3, data: this.patientData4(), question:"who?", answered: false, answer:"", type:"multi", time: 20  },
-      { key:4, data: this.patientData5(), question:"wo?", answered: false, answer:"", type:"tf", time: 20  }
+      { key:0, data: this.patientData1(), question:"where?", correct:"true", answered: false, answer:"", type:"tf", wordbank:["none"], time: 10 },
+      { key:1, data: this.patientData2(), question:"when?", correct:"aa", answered: false, answer:"", type:"blank", wordbank:[], time: 14 },
+      { key:2, data: this.patientData3(), question:"why?", correct:"bb", answered: false, answer:"", type:"short", wordbank:[], time: 11 },
+      { key:3, data: this.patientData4(), question:"who?", correct:"two", answered: false, answer:"", type:"multi", wordbank:["one","two","three", "four"], time: 20  },
+      { key:4, data: this.patientData5(), question:"wo?", correct:"false", answered: false, answer:"", type:"tf", wordbank:[], time: 20  }
     ];
     const filteredQuestions = queriedQuestions.filter(question => question.key <this.state.questionsNumber);
     return filteredQuestions;
@@ -166,9 +167,10 @@ class Game extends Component {
       {lifeCycle: "settings"}
     );
   }
-  openModalHandler = () => {
+  openModalHandler = (data) => {
     this.setState({
-        isShowing: true
+        isShowing: true,
+        data: data
     });
 }
 
@@ -201,9 +203,10 @@ closeModalHandler = () => {
           <Completion
             className="modal"
             show={this.state.isShowing}
-            close={this.closeModalHandler}>
-            You have completed the game with a score of: 83%!
-            Great Job!
+            close={this.closeModalHandler}
+            data={this.state.data}
+            rounds = {this.state.questionsNumber}
+          >
           </Completion></div> 
         : 
         null }

@@ -20,7 +20,7 @@ class Completion extends Component {
         const score = (meh.toFixed(3)) *100;
         var starScore =20;
         var stars = []
-        while(starScore < score){
+        while(starScore <= score){
            stars.push(faStar)
            starScore =starScore+ 20; 
         }
