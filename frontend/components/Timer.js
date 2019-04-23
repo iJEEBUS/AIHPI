@@ -9,8 +9,15 @@ class Timer extends Component {
           seconds: this.props.seconds
         };
     }
+    tick = () =>{
+      this.setState({ seconds: this.state.seconds>0?this.state.seconds-1:0 })
+      if(this.state.seconds == 0){
+        clearTimeout(this.interval);
+        this.props.timeOut();
+      }
+    }
     componentDidMount() {
-        this.interval = setInterval(() => this.setState({ seconds: this.state.seconds>0?this.state.seconds-1:0 }), 1000);
+        this.interval = setInterval(()=>this.tick(), 1000);
       }
   render() {
       const seconds = this.state.seconds;
