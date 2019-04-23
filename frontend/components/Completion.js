@@ -16,18 +16,10 @@ class Completion extends Component {
     scoreChange = () =>{
         if(this.state.currentScore <= this.state.score){
             var currentScore
-            var commentNumber = 0;
             if(this.state.currentScore < this.state.score){
                 currentScore = this.state.currentScore +1;
             }else{
-                currentScore = this.state.score;
-                if(this.state.score > 80){
-                    commentNumber = 3;
-                }else if(this.state.score > 50){
-                    commentNumber = 2;
-                }else{
-                    commentNumber = 1;
-                }
+                currentScore = this.state.currentScore;
             }
             var starScore =20;
             var stars = []
@@ -40,7 +32,18 @@ class Completion extends Component {
             }
             this.setState({ 
                 currentScore:  currentScore,
-                stars: stars,
+                stars: stars
+            })
+        }else{
+            var commentNumber = 0;
+            if(this.state.score > 80){
+                commentNumber = 3;
+            }else if(this.state.score > 50){
+                commentNumber = 2;
+            }else{
+                commentNumber = 1;
+            }
+            this.setState({ 
                 commentNumber: commentNumber
             })
         }
@@ -50,7 +53,7 @@ class Completion extends Component {
         var meh =0;
         const worth = 1/ this.props.rounds
         this.props.data.filter(function(value) {
-            if (value.correct == value.answer) {
+            if (value.correct.toUpperCase() == value.answer.toUpperCase()) {
                 meh=meh+worth
             }
           });

@@ -70,9 +70,8 @@ class GamePlay extends Component {
             wordbank={questions[current].wordbank} 
             answer={this.answerQuestion}
           />
-            <Timer seconds={questions[current].time}/>
+            <Timer seconds={questions[current].time} timeOut = {this.answerQuestion}/>
         </div>
-        <button className="Game_conferm" onClick={()=>this.answerQuestion()}>Answer</button>
         </div>
         :
         <div className="Game_question">
