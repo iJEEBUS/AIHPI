@@ -13,7 +13,7 @@ class Timer extends Component {
       this.setState({ seconds: this.state.seconds>0?this.state.seconds-1:0 })
       if(this.state.seconds == 0){
         clearTimeout(this.interval);
-        this.props.timeOut();
+        this.props.timeOut(" ");
       }
     }
     componentDidMount() {
